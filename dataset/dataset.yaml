@@ -1,0 +1,4 @@
+train: C:/Users/82108/Desktop/MSH202309-/2024-1/IOT/IoT_team5/IoT_team5/dataset/images/train
+val: C:/Users/82108/Desktop/MSH202309-/2024-1/IOT/IoT_team5/IoT_team5/dataset/images/val
+nc: 1
+names: ["eye"]
