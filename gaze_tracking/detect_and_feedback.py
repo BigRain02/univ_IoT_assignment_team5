@@ -1,59 +1,55 @@
 import cv2
-from gaze_tracking import GazeTracking
 import time
+import numpy as np
+from gaze_tracking import GazeTracking
 
-gaze = GazeTracking()
-webcam = cv2.VideoCapture(0)
 
-blink_counter = 0
-# blink_msg_shown = False
-start_time = time.time()
+def use_result(yolo_result, frame):
+	# eyes boxes
+	if yolo_result:
+		bboxes = np.array(yolo_result[0].boxes.xyxy.cpu(), dtype="int")
+		classes = np.array(yolo_result[0].boxes.cls.cpu(), dtype="int")
+		names = yolo_result[0].names
+		predict_box = zip(classes, bboxes)
+		for cls, bbox in predict_box:
+			(x, y, x2, y2) = bbox
+			print("bounding box (", x, y, x2, y2, ") has class ", cls, " which is ", names[cls])
+			if cls == 0:
+				cv2.rectangle(frame, (x, y), (x2, y2), (0, 0, 255), 2)
+				cv2.putText(frame, str(names[cls]), (x, y - 5), cv2.FONT_HERSHEY_PLAIN, 2, (0, 0, 255), 2)
 
-while True:
-	# We get a new frame from the webcam
-	_, frame = webcam.read()
+			scale_percent = 60
+			width = int(frame.shape[1] * scale_percent / 100)
+			height = int(frame.shape[0] * scale_percent / 100)
+			dim = (width, height)
 
-	# We send this frame to GazeTracking to analyze it
+			frame_s = cv2.resize(frame, dim, interpolation=cv2.INTER_AREA)
+			cv2.imshow("Img", frame_s)
+
+	# detect pulil and feedback
+	blinking_count = 0
+
+	gaze = GazeTracking()
 	gaze.refresh(frame)
 
 	frame = gaze.annotated_frame()
 	text = ""
 
-	blink_cnt_start_time = time.time()
-	while time.time() - blink_cnt_start_time <= 5:
-		if gaze.is_blinking():
-			text = "Blinking"
-			blink_counter += 1
-		# cv2.putText(frame, f"blinking_count={blink_counter}", (180, 20), cv2.FONT_HERSHEY_DUPLEX, 0.5, (0, 0, 255), 2)
-
-	if blink_counter >= 5:
-		text_start_time = time.time()
-		while time.time() - text_start_time <= 2:
-			cv2.putText(frame, "Blink too often!", (90, 180), cv2.FONT_HERSHEY_DUPLEX, 1.0, (0, 0, 255), 2)
-		#blink_message_shown = True
-		#start_time = time.time()
-	blink_counter = 0
-
-	if gaze.is_right():
-		text = "Looking right"
+	if gaze.is_blinking():
+		blinking_count += 1
+		text = "Blinking too often! Blink your eyes a little more relaxed."
+	elif gaze.is_right():
+		text = "You're looking to the right. Look at the center."
 	elif gaze.is_left():
-		text = "Looking left"
+		text = "You're looking to the left. Look at the center."
 	elif gaze.is_center():
-		text = "Looking center"
+		text = "You're looking to the center. That's good!"
 
-
-
-	cv2.putText(frame, text, (90, 50), cv2.FONT_HERSHEY_DUPLEX, 1.4, (147, 58, 31), 2)
+	cv2.putText(frame, text, (10, 50), cv2.FONT_HERSHEY_DUPLEX, 0.8, (255, 30, 30), 2)
 
 	left_pupil = gaze.pupil_left_coords()
 	right_pupil = gaze.pupil_right_coords()
-	cv2.putText(frame, "Left pupil:  " + str(left_pupil), (90, 110), cv2.FONT_HERSHEY_DUPLEX, 0.7, (147, 58, 31), 1)
-	cv2.putText(frame, "Right pupil: " + str(right_pupil), (90, 145), cv2.FONT_HERSHEY_DUPLEX, 0.7, (147, 58, 31), 1)
+	cv2.putText(frame, "Left pupil:  " + str(left_pupil), (20, 130), cv2.FONT_HERSHEY_DUPLEX, 0.7, (147, 58, 31), 1)
+	cv2.putText(frame, "Right pupil: " + str(right_pupil), (20, 165), cv2.FONT_HERSHEY_DUPLEX, 0.7, (147, 58, 31), 1)
 
 	cv2.imshow("Demo", frame)
-
-	if cv2.waitKey(1) == 27:
-		break
-
-webcam.release()
-cv2.destroyAllWindows()
