@@ -141,4 +141,4 @@ def use_result(yolo_result, frame):
 ```
 <br/><br/>
 
-# 5. Youtube Link for Deomo
+# 5. Youtube Link for Demo
