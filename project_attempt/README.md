@@ -1,11 +1,5 @@
 # Eye tracking AI
 
-<table>
-    <tr>
-        <td> This project is part of the mobile systems engineering class _Embedded systems and IoT_ at Dankook university(단국대학교). We are team 5 and are working on an algorithm/AI-based program to detect the direction a person is looking to, also known as eye tracking. Our motivation is to help people improve their presentation skills by collecting data about where they look, i.e. the audience, the screen or their notes, but we also see many more uses like helping drivers stay focused on the street or companies testing their advertisement and whether it "catches" the public's eye. </td>
-    </tr>
-</table>
-
 <br/>
 <br/>
 <br/>
