@@ -19,6 +19,7 @@ In our 2-staged approach, this model is the first model, finding the eyes in any
 
 ## Overview
 we train yolov8 on customized datasets to recognize human eyes. In addition, it recognizes human pupils and identifies the movement of the gaze, displaying feedback on gaze processing in real time on the webcam screen. The overall process is shown in the picture below.  
+![](/team5-poster.png)
 ![Concept poster of the steps involved in detecting the person's eyes and where they look](/team5-poster.png)
 <br/><br/>
 
