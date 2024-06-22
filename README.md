@@ -142,3 +142,6 @@ def use_result(yolo_result, frame):
 <br/><br/><br/>
 
 # 5. Youtube Link for Demo
+- In the part where I turn on the webcam in the video to show my face, due to a slight error, the part that says 'center' is missing and only the voice that says left, right blinking is saved. However, if you look at the screen, you can see that the feedback about the center appears normally when I'm staring at the center.
+- https://youtu.be/XA6bB0BemBo
+  
