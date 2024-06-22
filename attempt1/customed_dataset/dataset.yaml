@@ -1,0 +1,4 @@
+train: /content/drive/MyDrive/YOLODataset/images/train/
+val: /content/drive/MyDrive/YOLODataset/images/val/
+nc: 1
+names: ["eye"]
