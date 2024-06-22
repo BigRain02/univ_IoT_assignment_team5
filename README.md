@@ -12,6 +12,8 @@ Team 5 Members: Moon seunghyeon, Kim Taewoo, Maximilian Bongers, Liu Yuyang
     </tr>
 </table>
 
+<br/><br/>
+
 ## Overview
 we train yolov8 on customized datasets to recognize human eyes. In addition, it recognizes human pupils and identifies the movement of the gaze, displaying feedback on gaze processing in real time on the webcam screen. The overall process is shown in the picture below.  
 ![Concept poster of the steps involved in detecting the person's eyes and where they look](/team5-poster.png)
