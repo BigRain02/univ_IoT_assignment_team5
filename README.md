@@ -1,5 +1,5 @@
 #  [Embedded systems and IoT Team Project] Eye Tracking
-Team 5 Members: Moon seunghyeon, Kim Taewoo, Maximilian Bongers, Liu Yuyang
+Team 5 members: Moon Seunghyeon, Kim Taewoo, Maximilian Bongers, Liu Yuyang
 
 
 
@@ -68,7 +68,7 @@ IoT_team5/  <br/>
 
 
 ## Customed Dataset
-- The dataset used is a sub-selection of the dataset Labeled Faces in the Wild, short [LFW](https://www.kaggle.com/datasets/atulanandjha/lfwpeople).
+- The dataset used is a sub-selection of the dataset Labeled Faces in the Wild, in short [LFW](https://www.kaggle.com/datasets/atulanandjha/lfwpeople).
 - We labeled the images ourself, 532 for training and another 354 for validation. 
 
 
@@ -151,4 +151,6 @@ def use_result(yolo_result, frame):
 # 5. Youtube Link for Demo
 - In the part where I turn on the webcam in the video to show my face, due to a slight error, the part that says 'center' is missing and only the voice that says left, right blinking is saved. However, if you look at the screen, you can see that the feedback about the center appears normally when I'm looking at the center.
 - https://youtu.be/XA6bB0BemBo
+
+Note: Due to technical difficulties, this project is an "invisible" fork of [the initial repo](https://github.com/lunash0/IoT_team5).
   
