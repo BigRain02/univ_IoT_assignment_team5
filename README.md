@@ -1,5 +1,4 @@
 #  [Team Project] Eye Tracking
-<br/>
 Team 5 Members: Moon seunghyeon, Kim Taewoo, Max, Lucia
 <br/><br/>
 
@@ -19,6 +18,15 @@ In our 2-staged approach, this model is the first model, finding the eyes in any
 
 
 ## Overview
+we train yolov8 on customized datasets to recognize human eyes. In addition, it recognizes human pupils and identifies the movement of the gaze, displaying feedback on gaze processing in real time on the webcam screen. The overall process is shown in the picture below.  
+![Concept poster of the steps involved in detecting the person's eyes and where they look](/team5-poster.png)
+<br/><br/>
+
+
+
+
+
+
 
 We use a 2-staged structure to simplify each module and also keep them modular, so that retraining one model should not impact the other model. In this particular case, we are using the first stage to find any eyes in the current frame, and the second stage takes the eye-cutout, tries finds the pupil, and and with that information figure out where the person is looking.
 There is a lot of room to improve detection without changing the models, since knowing that humans have two eyes, sanity checks through cross-checking can be performed on the output. 
