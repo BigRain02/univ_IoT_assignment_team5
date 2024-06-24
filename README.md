@@ -6,6 +6,7 @@ Team 5 members: Moon Seunghyeon, Kim Taewoo, Maximilian Bongers, Liu Yuyang
 ![Python](https://img.shields.io/badge/Code-Python3.9-blue)
 ![Windows](https://img.shields.io/badge/Platform-Windows-purple)
 
+<br/><br/>
 
 <table>
     <tr>
