@@ -13,8 +13,7 @@ Team 5 members: Moon Seunghyeon, Kim Taewoo, Maximilian Bongers, Liu Yuyang
     </tr>
 </table>
 
-
-
+<br/><br/>
 
 ## Overview
 
@@ -22,8 +21,7 @@ We trained yolov8 on customized datasets to recognize human eyes. In addition, i
 
 ![Concept poster of the steps involved in detecting the person's eyes and where they look](/project_final_version/team5-poster.png)
 
-
-
+<br/><br/>
 
 ## Directory Structure
 - directory 'project_attempt': containing the codes you tried early on in the project  
@@ -65,21 +63,20 @@ IoT_team5/  <br/>
    └─ yolov8s.pt  <br/>
 </details>
 
-
+<br/><br/>
 
 ## Customed Dataset
 - The dataset used is a sub-selection of the dataset Labeled Faces in the Wild, in short [LFW](https://www.kaggle.com/datasets/atulanandjha/lfwpeople).
 - We labeled the images ourself, 532 for training and another 354 for validation. 
 
-
-
+<br/><br/>
 
 ## Training
 - We uses [YOLOv8 by ultralytics](https://github.com/ultralytics/ultralytics) to find any eyes in the frame.
 - We trained model in 10 epochs.
 - Weights and last.pt and best.pt for each epoch can be found in project_final_version/runs/detect.
 
-
+<br/><br/>
 
 ## Our Algorithm
 - Our assignment was to use yolov8 to recognize objects and use the results to write our own algorithms (open source available). Therefore, we used yolov8 to recognize eyes, and if it was well recognized, we used the results to do the following.
@@ -146,11 +143,9 @@ def use_result(yolo_result, frame):
     cv2.imshow("Demo", frame)
 ```
 
-
+<br/><br/>
 
 # 5. Youtube Link for Demo
 - In the part where I turn on the webcam in the video to show my face, due to a slight error, the part that says 'center' is missing and only the voice that says left, right blinking is saved. However, if you look at the screen, you can see that the feedback about the center appears normally when I'm looking at the center.
 - https://youtu.be/XA6bB0BemBo
-
-Note: Due to technical difficulties, this project is an "invisible" fork of [the initial repo](https://github.com/lunash0/IoT_team5).
   
