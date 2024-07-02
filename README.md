@@ -1,5 +1,5 @@
 #  [Embedded systems and IoT Team Project] Eye Tracking
-Team 5 members: Moon Seunghyeon, Kim Taewoo, Maximilian Bongers, Liu Yuyang
+Team 5 members: Moon Seunghyeon[[lunash0](https://github.com/lunash0)], Kim Taewoo[[BigRain02](https://github.com/BigRain02)], Maximilian Bongers[[MaxB-DKU](https://github.com/MaxB-DKU)], Liu Yuyang
 
 
 
